@@ -12,13 +12,13 @@ import GameplayKit
 
 class GameScene: SKScene
 {
+    let booms: [SKEmitterNode?] = [SKEmitterNode(fileNamed: "FireworkExplosion"), SKEmitterNode(fileNamed: "FireworkExplosion2"),SKEmitterNode(fileNamed:"FireworkExplosion3"), SKEmitterNode(fileNamed:  " FireworkExplosion4")]
     var hasSetSize = false
-    var boom: SKEmitterNode? = SKEmitterNode(fileNamed: "FireworkExplosion")
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         for touch in touches
         {
-            if let particles = self.boom?.copy() as! SKEmitterNode?
+            if let particles = self.booms[Int(arc4random_uniform(UInt32(booms.count)))]?.copy() as! SKEmitterNode?
             {
                 let point = touch.preciseLocation(in: touch.view)
                 particles.position = CGPoint(x: point.x, y: -point.y)

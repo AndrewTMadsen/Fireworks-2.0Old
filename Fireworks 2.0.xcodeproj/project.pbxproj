@@ -18,6 +18,9 @@
 		9D6C153820F6632B0050BD60 /* Fireworks_2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C153720F6632B0050BD60 /* Fireworks_2_0Tests.swift */; };
 		9D6C154320F6632B0050BD60 /* Fireworks_2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C154220F6632B0050BD60 /* Fireworks_2_0UITests.swift */; };
 		9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C155020F663D70050BD60 /* FireworkExplosion.sks */; };
+		9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */; };
+		9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */; };
+		9D881A2E20FCEB5F0011D2C0 /* FireworkExplosion4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		9D6C154220F6632B0050BD60 /* Fireworks_2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fireworks_2_0UITests.swift; sourceTree = "<group>"; };
 		9D6C154420F6632B0050BD60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6C155020F663D70050BD60 /* FireworkExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion.sks; sourceTree = "<group>"; };
+		9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion2.sks; sourceTree = "<group>"; };
+		9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion3.sks; sourceTree = "<group>"; };
+		9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion4.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				9D6C152420F6632A0050BD60 /* GameViewController.swift */,
 				9D6C152620F6632A0050BD60 /* Main.storyboard */,
 				9D6C155020F663D70050BD60 /* FireworkExplosion.sks */,
+				9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */,
+				9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */,
+				9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */,
 				9D6C152920F6632B0050BD60 /* Assets.xcassets */,
 				9D6C152B20F6632B0050BD60 /* LaunchScreen.storyboard */,
 				9D6C152E20F6632B0050BD60 /* Info.plist */,
@@ -243,10 +252,13 @@
 			files = (
 				9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */,
 				9D6C152820F6632A0050BD60 /* Main.storyboard in Resources */,
+				9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */,
 				9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */,
 				9D6C152A20F6632B0050BD60 /* Assets.xcassets in Resources */,
 				9D6C152D20F6632B0050BD60 /* LaunchScreen.storyboard in Resources */,
 				9D6C152120F6632A0050BD60 /* Actions.sks in Resources */,
+				9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */,
+				9D881A2E20FCEB5F0011D2C0 /* FireworkExplosion4.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
