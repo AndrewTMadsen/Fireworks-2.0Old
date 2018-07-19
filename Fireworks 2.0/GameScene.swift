@@ -9,13 +9,14 @@
 import SpriteKit
 import GameplayKit
 
-
 class GameScene: SKScene {
-    var booms: [SKEmitterNode] = [SKEmitterNode(fileNamed: "FireworkExplosion")!, SKEmitterNode(fileNamed: "FireworkExplosion2")!, SKEmitterNode(fileNamed:"FireworkExplosion3")!, SKEmitterNode(fileNamed: "FireworkExplosion4")!]
     
     var hasSetSize = false
     var particles = [UITouch: SKEmitterNode]()
     
+    var booms: [SKEmitterNode] = [SKEmitterNode(fileNamed: "FireworkExplosion")!, SKEmitterNode(fileNamed: "FireworkExplosion2")!, SKEmitterNode(fileNamed:"FireworkExplosion3")!, SKEmitterNode(fileNamed: "FireworkExplosion4")!, SKEmitterNode(fileNamed: "FireWorkAN")!, SKEmitterNode(fileNamed: "FireworkRL")!, SKEmitterNode(fileNamed: "FireworkKA")!, SKEmitterNode(fileNamed: "FireworkCA")!, SKEmitterNode(fileNamed: "FireworkAB")!, SKEmitterNode(fileNamed: "FireworkSM")!, SKEmitterNode(fileNamed: "FireworkBM")!]
+    
+    //MARK: Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         fireFirework(at: touches)
     }
@@ -53,9 +54,9 @@ class GameScene: SKScene {
             }
         }
     }
+    
     func fireFirework(at touches: Set<UITouch>) {
-        for touch in touches
-        {
+        for touch in touches {
             if let particle = getParticle(touch) {
                 
                 let point = touch.preciseLocation(in: touch.view)
@@ -67,10 +68,8 @@ class GameScene: SKScene {
         }
     }
     
-    override func update(_ currentTime: TimeInterval)
-    {
-        if !hasSetSize
-        {
+    override func update(_ currentTime: TimeInterval) {
+        if !hasSetSize {
             self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             hasSetSize = true
         }

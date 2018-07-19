@@ -27,6 +27,8 @@
 		9DB4066321004F420068B832 /* FireworkKA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4066221004F420068B832 /* FireworkKA.sks */; };
 		9DB40665210050440068B832 /* FireworkCA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DB40664210050440068B832 /* FireworkCA.sks */; };
 		9DB40667210051F30068B832 /* FireworkAB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DB40666210051F30068B832 /* FireworkAB.sks */; };
+		9DB40669210060600068B832 /* FireworkSM.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DB40668210060600068B832 /* FireworkSM.sks */; };
+		9DB4066B210076C70068B832 /* FireworkBM.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4066A210076C70068B832 /* FireworkBM.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		9DB4066221004F420068B832 /* FireworkKA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkKA.sks; sourceTree = "<group>"; };
 		9DB40664210050440068B832 /* FireworkCA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkCA.sks; sourceTree = "<group>"; };
 		9DB40666210051F30068B832 /* FireworkAB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkAB.sks; sourceTree = "<group>"; };
+		9DB40668210060600068B832 /* FireworkSM.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkSM.sks; sourceTree = "<group>"; };
+		9DB4066A210076C70068B832 /* FireworkBM.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkBM.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				9DB4066221004F420068B832 /* FireworkKA.sks */,
 				9DB40664210050440068B832 /* FireworkCA.sks */,
 				9DB40666210051F30068B832 /* FireworkAB.sks */,
+				9DB40668210060600068B832 /* FireworkSM.sks */,
+				9DB4066A210076C70068B832 /* FireworkBM.sks */,
 				9DB4065F21004CE80068B832 /* Assets.xcassets */,
 			);
 			path = Fireworks;
@@ -282,10 +288,12 @@
 				9D6C152820F6632A0050BD60 /* Main.storyboard in Resources */,
 				9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */,
 				9DB4066321004F420068B832 /* FireworkKA.sks in Resources */,
+				9DB40669210060600068B832 /* FireworkSM.sks in Resources */,
 				9DB4065C21004BA80068B832 /* FireWorkAN.sks in Resources */,
 				9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */,
 				9D6C152A20F6632B0050BD60 /* Assets.xcassets in Resources */,
 				9DB40665210050440068B832 /* FireworkCA.sks in Resources */,
+				9DB4066B210076C70068B832 /* FireworkBM.sks in Resources */,
 				9D6C152D20F6632B0050BD60 /* LaunchScreen.storyboard in Resources */,
 				9D6C152120F6632A0050BD60 /* Actions.sks in Resources */,
 				9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */,
