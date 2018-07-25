@@ -18,6 +18,8 @@
 		9D6C153820F6632B0050BD60 /* Fireworks_2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C153720F6632B0050BD60 /* Fireworks_2_0Tests.swift */; };
 		9D6C154320F6632B0050BD60 /* Fireworks_2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C154220F6632B0050BD60 /* Fireworks_2_0UITests.swift */; };
 		9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C155020F663D70050BD60 /* FireworkExplosion.sks */; };
+		9D8724842108B73400C8E7AE /* testTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724822108B73400C8E7AE /* testTrail.sks */; };
+		9D8724852108B73400C8E7AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724832108B73400C8E7AE /* Assets.xcassets */; };
 		9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */; };
 		9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */; };
 		9D881A2E20FCEB5F0011D2C0 /* FireworkExplosion4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */; };
@@ -66,6 +68,8 @@
 		9D6C154220F6632B0050BD60 /* Fireworks_2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fireworks_2_0UITests.swift; sourceTree = "<group>"; };
 		9D6C154420F6632B0050BD60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6C155020F663D70050BD60 /* FireworkExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion.sks; sourceTree = "<group>"; };
+		9D8724822108B73400C8E7AE /* testTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = testTrail.sks; sourceTree = "<group>"; };
+		9D8724832108B73400C8E7AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion2.sks; sourceTree = "<group>"; };
 		9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion3.sks; sourceTree = "<group>"; };
 		9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion4.sks; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			path = "Fireworks 2.0UITests";
 			sourceTree = "<group>";
 		};
+		9D8724812108B6F200C8E7AE /* Firework Trails */ = {
+			isa = PBXGroup;
+			children = (
+				9D8724822108B73400C8E7AE /* testTrail.sks */,
+				9D8724832108B73400C8E7AE /* Assets.xcassets */,
+			);
+			path = "Firework Trails";
+			sourceTree = "<group>";
+		};
 		9DB4065D21004C8D0068B832 /* Fireworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 				9DB40666210051F30068B832 /* FireworkAB.sks */,
 				9DB40668210060600068B832 /* FireworkSM.sks */,
 				9DB4066A210076C70068B832 /* FireworkBM.sks */,
+				9D8724812108B6F200C8E7AE /* Firework Trails */,
 				9DB4065F21004CE80068B832 /* Assets.xcassets */,
 			);
 			path = Fireworks;
@@ -285,6 +299,7 @@
 				9DB4066021004CE80068B832 /* FireworkRL.sks in Resources */,
 				9DB40667210051F30068B832 /* FireworkAB.sks in Resources */,
 				9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */,
+				9D8724852108B73400C8E7AE /* Assets.xcassets in Resources */,
 				9D6C152820F6632A0050BD60 /* Main.storyboard in Resources */,
 				9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */,
 				9DB4066321004F420068B832 /* FireworkKA.sks in Resources */,
@@ -292,6 +307,7 @@
 				9DB4065C21004BA80068B832 /* FireWorkAN.sks in Resources */,
 				9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */,
 				9D6C152A20F6632B0050BD60 /* Assets.xcassets in Resources */,
+				9D8724842108B73400C8E7AE /* testTrail.sks in Resources */,
 				9DB40665210050440068B832 /* FireworkCA.sks in Resources */,
 				9DB4066B210076C70068B832 /* FireworkBM.sks in Resources */,
 				9D6C152D20F6632B0050BD60 /* LaunchScreen.storyboard in Resources */,
@@ -501,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F35N7BWAFY;
 				INFOPLIST_FILE = "Fireworks 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,6 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F35N7BWAFY;
 				INFOPLIST_FILE = "Fireworks 2.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

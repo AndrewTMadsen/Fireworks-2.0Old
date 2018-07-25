@@ -13,17 +13,23 @@ class GameScene: SKScene {
     
     var hasSetSize = false
     var particles = [UITouch: SKEmitterNode]()
+    var particleTrails = [UITouch: SKEmitterNode]()
     
     var booms: [SKEmitterNode] = [SKEmitterNode(fileNamed: "FireworkExplosion")!, SKEmitterNode(fileNamed: "FireworkExplosion2")!, SKEmitterNode(fileNamed:"FireworkExplosion3")!, SKEmitterNode(fileNamed: "FireworkExplosion4")!, SKEmitterNode(fileNamed: "FireWorkAN")!, SKEmitterNode(fileNamed: "FireworkRL")!, SKEmitterNode(fileNamed: "FireworkKA")!, SKEmitterNode(fileNamed: "FireworkCA")!, SKEmitterNode(fileNamed: "FireworkAB")!, SKEmitterNode(fileNamed: "FireworkSM")!, SKEmitterNode(fileNamed: "FireworkBM")!]
     
     //MARK: Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        fireFirework(at: touches)
+        print("Began \(NSDate().description)")
+        startTail(at: touches)
+        { point in
+            print("Finished \(NSDate().description)")
+            self.fireFirework(point)
+        }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        fireFirework(at: touches)
-    }
+    //override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+      //  fireFirework(at: touches)
+    //}
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         removeTouches(touches)
@@ -33,25 +39,27 @@ class GameScene: SKScene {
         removeTouches(touches)
     }
     
-    func removeTouches(_ touches: Set<UITouch>) {
-        for touch in touches {
-        particles[touch] = nil
-        }
-    }
-    
     func getParticle(_ touch: UITouch) -> SKEmitterNode? {
         if let particle = particles[touch] {
-            return particle.copy() as? SKEmitterNode
+            let smth = particle.copy() as? SKEmitterNode
+            smth?.run(SKAction.sequence([SKAction.wait(forDuration: 1.25), SKAction.removeFromParent()]))
+            return smth
         } else {
-            
             let randomNumber = Int(arc4random_uniform(UInt32(booms.count)))
-            if let particle = self.booms[randomNumber].copy() as? SKEmitterNode
-            {
+            if let particle = self.booms[randomNumber].copy() as? SKEmitterNode {
                 particles[touch] = particle
-                return particle
+                particle.run(SKAction.sequence([SKAction.wait(forDuration: 1.25), SKAction.removeFromParent()]))
+                return particle 
             } else {
                 return nil
             }
+        }
+    }
+    
+    func removeTouches(_ touches: Set<UITouch>) {
+        for touch in touches {
+            particles[touch] = nil
+            
         }
     }
     
@@ -68,9 +76,50 @@ class GameScene: SKScene {
         }
     }
     
+    func fireFirework(_ point: CGPoint) {
+        let randomNumber = Int(arc4random_uniform(UInt32(booms.count)))
+        if let particle = self.booms[randomNumber].copy() as? SKEmitterNode {
+            particle.run(SKAction.sequence([SKAction.wait(forDuration: 1.25), SKAction.removeFromParent()]))
+                
+                particle.position = point
+                self.addChild(particle)
+            } else {
+                print("No Particle Found")
+            }
+    }
+    //MARK: Firework Trails
+    
+    var boomTrails: [SKEmitterNode] = [SKEmitterNode(fileNamed: "testTrail")!]
+    
+    func startTail(at touches: Set<UITouch>, _ completion: @escaping (_ point: CGPoint) -> Void) {
+        for touch   in touches
+        {
+            let oldPoint = touch.preciseLocation(in: self.view)
+            let newPoint = CGPoint(x: oldPoint.x, y: -oldPoint.y)
+        if let particleTrail = particleTrails[touch] {
+            if let smthT = particleTrail.copy() as? SKEmitterNode
+            {
+            smthT.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
+                smthT.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
+            
+            self.addChild(smthT)
+            }
+        } else {
+            let randomNumber = Int(arc4random_uniform(UInt32(boomTrails.count)))
+            if let particleTrail = self.boomTrails[randomNumber].copy() as? SKEmitterNode {
+                particleTrails[touch] = particleTrail
+                particleTrail.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
+                particleTrail.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
+                self.addChild(particleTrail)
+            }
+        }
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         if !hasSetSize {
             self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            self.view?.shouldCullNonVisibleNodes = true
             hasSetSize = true
         }
     }
