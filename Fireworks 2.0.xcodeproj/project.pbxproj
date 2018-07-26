@@ -20,6 +20,16 @@
 		9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C155020F663D70050BD60 /* FireworkExplosion.sks */; };
 		9D8724842108B73400C8E7AE /* testTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724822108B73400C8E7AE /* testTrail.sks */; };
 		9D8724852108B73400C8E7AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724832108B73400C8E7AE /* Assets.xcassets */; };
+		9D872487210A084400C8E7AE /* Trail0.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D872486210A084400C8E7AE /* Trail0.sks */; };
+		9D872489210A08FB00C8E7AE /* Trail1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D872488210A08FB00C8E7AE /* Trail1.sks */; };
+		9D87248B210A0A5300C8E7AE /* Trail2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D87248A210A0A5300C8E7AE /* Trail2.sks */; };
+		9D87248F210A0C9F00C8E7AE /* Trail3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D87248E210A0C9F00C8E7AE /* Trail3.sks */; };
+		9D872491210A0D6000C8E7AE /* TrailGOD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D872490210A0D6000C8E7AE /* TrailGOD.sks */; };
+		9D87249F210A163000C8E7AE /* Trail4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D87249E210A163000C8E7AE /* Trail4.sks */; };
+		9D8724A1210A185B00C8E7AE /* Trail5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724A0210A185B00C8E7AE /* Trail5.sks */; };
+		9D8724A3210A197B00C8E7AE /* Trail9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724A2210A197B00C8E7AE /* Trail9.sks */; };
+		9D8724A5210A1A5300C8E7AE /* Trail10.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724A4210A1A5300C8E7AE /* Trail10.sks */; };
+		9D8724A7210A1B0400C8E7AE /* Trail11.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D8724A6210A1B0400C8E7AE /* Trail11.sks */; };
 		9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */; };
 		9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */; };
 		9D881A2E20FCEB5F0011D2C0 /* FireworkExplosion4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */; };
@@ -70,6 +80,16 @@
 		9D6C155020F663D70050BD60 /* FireworkExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion.sks; sourceTree = "<group>"; };
 		9D8724822108B73400C8E7AE /* testTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = testTrail.sks; sourceTree = "<group>"; };
 		9D8724832108B73400C8E7AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D872486210A084400C8E7AE /* Trail0.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail0.sks; sourceTree = "<group>"; };
+		9D872488210A08FB00C8E7AE /* Trail1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail1.sks; sourceTree = "<group>"; };
+		9D87248A210A0A5300C8E7AE /* Trail2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail2.sks; sourceTree = "<group>"; };
+		9D87248E210A0C9F00C8E7AE /* Trail3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail3.sks; sourceTree = "<group>"; };
+		9D872490210A0D6000C8E7AE /* TrailGOD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrailGOD.sks; sourceTree = "<group>"; };
+		9D87249E210A163000C8E7AE /* Trail4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail4.sks; sourceTree = "<group>"; };
+		9D8724A0210A185B00C8E7AE /* Trail5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail5.sks; sourceTree = "<group>"; };
+		9D8724A2210A197B00C8E7AE /* Trail9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail9.sks; sourceTree = "<group>"; };
+		9D8724A4210A1A5300C8E7AE /* Trail10.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail10.sks; sourceTree = "<group>"; };
+		9D8724A6210A1B0400C8E7AE /* Trail11.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail11.sks; sourceTree = "<group>"; };
 		9D881A2720FCE40D0011D2C0 /* FireworkExplosion2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion2.sks; sourceTree = "<group>"; };
 		9D881A2B20FCE9000011D2C0 /* FireworkExplosion3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion3.sks; sourceTree = "<group>"; };
 		9D881A2D20FCEB5F0011D2C0 /* FireworkExplosion4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkExplosion4.sks; sourceTree = "<group>"; };
@@ -167,6 +187,16 @@
 			isa = PBXGroup;
 			children = (
 				9D8724822108B73400C8E7AE /* testTrail.sks */,
+				9D872486210A084400C8E7AE /* Trail0.sks */,
+				9D872488210A08FB00C8E7AE /* Trail1.sks */,
+				9D87248A210A0A5300C8E7AE /* Trail2.sks */,
+				9D87248E210A0C9F00C8E7AE /* Trail3.sks */,
+				9D872490210A0D6000C8E7AE /* TrailGOD.sks */,
+				9D87249E210A163000C8E7AE /* Trail4.sks */,
+				9D8724A0210A185B00C8E7AE /* Trail5.sks */,
+				9D8724A2210A197B00C8E7AE /* Trail9.sks */,
+				9D8724A4210A1A5300C8E7AE /* Trail10.sks */,
+				9D8724A6210A1B0400C8E7AE /* Trail11.sks */,
 				9D8724832108B73400C8E7AE /* Assets.xcassets */,
 			);
 			path = "Firework Trails";
@@ -297,23 +327,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB4066021004CE80068B832 /* FireworkRL.sks in Resources */,
+				9D872491210A0D6000C8E7AE /* TrailGOD.sks in Resources */,
 				9DB40667210051F30068B832 /* FireworkAB.sks in Resources */,
+				9D8724A5210A1A5300C8E7AE /* Trail10.sks in Resources */,
 				9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */,
 				9D8724852108B73400C8E7AE /* Assets.xcassets in Resources */,
+				9D87249F210A163000C8E7AE /* Trail4.sks in Resources */,
 				9D6C152820F6632A0050BD60 /* Main.storyboard in Resources */,
+				9D8724A3210A197B00C8E7AE /* Trail9.sks in Resources */,
+				9D872487210A084400C8E7AE /* Trail0.sks in Resources */,
+				9D8724A1210A185B00C8E7AE /* Trail5.sks in Resources */,
 				9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */,
 				9DB4066321004F420068B832 /* FireworkKA.sks in Resources */,
 				9DB40669210060600068B832 /* FireworkSM.sks in Resources */,
 				9DB4065C21004BA80068B832 /* FireWorkAN.sks in Resources */,
+				9D8724A7210A1B0400C8E7AE /* Trail11.sks in Resources */,
 				9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */,
 				9D6C152A20F6632B0050BD60 /* Assets.xcassets in Resources */,
+				9D872489210A08FB00C8E7AE /* Trail1.sks in Resources */,
 				9D8724842108B73400C8E7AE /* testTrail.sks in Resources */,
 				9DB40665210050440068B832 /* FireworkCA.sks in Resources */,
+				9D87248B210A0A5300C8E7AE /* Trail2.sks in Resources */,
 				9DB4066B210076C70068B832 /* FireworkBM.sks in Resources */,
 				9D6C152D20F6632B0050BD60 /* LaunchScreen.storyboard in Resources */,
 				9D6C152120F6632A0050BD60 /* Actions.sks in Resources */,
 				9D881A2820FCE40D0011D2C0 /* FireworkExplosion2.sks in Resources */,
 				9DB4066121004CE80068B832 /* Assets.xcassets in Resources */,
+				9D87248F210A0C9F00C8E7AE /* Trail3.sks in Resources */,
 				9D881A2E20FCEB5F0011D2C0 /* FireworkExplosion4.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

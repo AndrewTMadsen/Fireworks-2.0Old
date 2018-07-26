@@ -19,17 +19,14 @@ class GameScene: SKScene {
     
     //MARK: Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Began \(NSDate().description)")
-        startTail(at: touches)
-        { point in
-            print("Finished \(NSDate().description)")
+        startTail(at: touches) { point in
             self.fireFirework(point)
         }
     }
     
     //override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      //  fireFirework(at: touches)
-    //}
+   //     fireFirework(at: touches)
+   // }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         removeTouches(touches)
@@ -89,19 +86,16 @@ class GameScene: SKScene {
     }
     //MARK: Firework Trails
     
-    var boomTrails: [SKEmitterNode] = [SKEmitterNode(fileNamed: "testTrail")!]
+    var boomTrails: [SKEmitterNode] = [SKEmitterNode(fileNamed: "testTrail")!, SKEmitterNode(fileNamed: "Trail0")!, SKEmitterNode(fileNamed: "Trail1")!, SKEmitterNode(fileNamed: "Trail2")!,SKEmitterNode(fileNamed: "Trail3")!, SKEmitterNode(fileNamed: "Trail4")!, SKEmitterNode(fileNamed: "TrailGOD")!, SKEmitterNode(fileNamed: "Trail5")!, SKEmitterNode(fileNamed: "Trail9")!,SKEmitterNode(fileNamed: "Trail10")!, SKEmitterNode(fileNamed: "Trail11")!]
     
     func startTail(at touches: Set<UITouch>, _ completion: @escaping (_ point: CGPoint) -> Void) {
-        for touch   in touches
-        {
+        for touch   in touches {
             let oldPoint = touch.preciseLocation(in: self.view)
             let newPoint = CGPoint(x: oldPoint.x, y: -oldPoint.y)
         if let particleTrail = particleTrails[touch] {
-            if let smthT = particleTrail.copy() as? SKEmitterNode
-            {
+            if let smthT = particleTrail.copy() as? SKEmitterNode {
             smthT.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
                 smthT.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
-            
             self.addChild(smthT)
             }
         } else {
