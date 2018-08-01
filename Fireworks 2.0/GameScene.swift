@@ -22,9 +22,9 @@ class GameScene: SKScene {
     
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
-        isTouchEligible = false
+       // isTouchEligible = false
     }
-
+    
     @objc func endTimer() {
         countdownTimer.invalidate()
         isTouchEligible = true
@@ -33,17 +33,78 @@ class GameScene: SKScene {
     //MARK: Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isTouchEligible {
-            startTail(at: touches) { point in
-                self.fireFirework(point)
-                self.playBoomSound()
+            //startTail(at: touches) { point in //NON MUSIC MODE
+            for point in touches
+            {
+                print(point.preciseLocation(in: view))
+                fireFirework(CGPoint(x: point.preciseLocation(in: view).x, y: -point.preciseLocation(in: view).y)) //If not music, pass in just point here.
+                var section = 0
+                var currentSize = UIScreen.main.bounds.height / 8
+                while(currentSize < point.preciseLocation(in: view).y) //If not music, pass in just -point.y here.
+                {
+                    currentSize += UIScreen.main.bounds.height / 8
+                    section += 1 //Thanks swift ++ is so hard
+                }
+                switch(section)
+                {
+                case 0:
+                    playBoomSound("NotMid_C")
+                case 1:
+                    playBoomSound("Mid_B")
+                case 2:
+                    playBoomSound("Mid_A")
+                case 3:
+                    playBoomSound("Mid_G")
+                case 4:
+                    playBoomSound("Mid_F")
+                case 5:
+                    playBoomSound("Mid_E")
+                case 6:
+                    playBoomSound("Mid_D")
+                case 7:
+                    playBoomSound("Mid_C")
+                default:
+                    fatalError("This will never be called")
+                }
+                // self.playBoomSound()
             }
         }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isTouchEligible {
-            startTail(at: touches) { point in
-                self.fireFirework(point)
-                self.playBoomSound()
+            //startTail(at: touches) { point in //NON MUSIC MODE
+            for point in touches
+            {
+                fireFirework(CGPoint(x: point.preciseLocation(in: view).x, y: -point.preciseLocation(in: view).y)) //If not music, pass in just point here.
+                var currentSize = UIScreen.main.bounds.height / 8
+                var section = 0
+                
+                while currentSize < point.preciseLocation(in: view).y {
+                    section += 1 // swift is ++ too Hard
+                    currentSize += UIScreen.main.bounds.height / 8
+                }
+                switch (section) {
+                case 0:
+                    playBoomSound("NotMid_C")
+                case 1:
+                    playBoomSound("Mid_B")
+                case 2:
+                    playBoomSound("Mid_A")
+                case 3:
+                    playBoomSound("Mid_G")
+                case 4:
+                    playBoomSound("Mid_F")
+                case 5:
+                    playBoomSound("Mid_E")
+                case 6:
+                    playBoomSound("Mid_D")
+                case 7:
+                    playBoomSound("Mid_C")
+                default:
+                    fatalError("This will never be called")
+                }
+                
+                // self.playBoomSound()
             }
         }
     }
@@ -65,23 +126,9 @@ class GameScene: SKScene {
     //MARK: Fireworks
     
     var booms: [SKEmitterNode] = [SKEmitterNode(fileNamed: "FireworkExplosion")!, SKEmitterNode(fileNamed: "FireworkExplosion2")!, SKEmitterNode(fileNamed:"FireworkExplosion3")!, SKEmitterNode(fileNamed: "FireworkExplosion4")!, SKEmitterNode(fileNamed: "FireWorkAN")!, SKEmitterNode(fileNamed: "FireworkRL")!, SKEmitterNode(fileNamed: "FireworkKA")!, SKEmitterNode(fileNamed: "FireworkCA")!, SKEmitterNode(fileNamed: "FireworkAB")!, SKEmitterNode(fileNamed: "FireworkSM")!, SKEmitterNode(fileNamed: "FireworkBM")!]
-   
     
-//    func fireFirework(at touches: Set<UITouch>) {
-//        for touch in touches {
-//            if let particle = getParticle(touch) {
-//
-//                let point = touch.preciseLocation(in: touch.view)
-//                particle.position = CGPoint(x: point.x, y: -point.y)
-//                self.addChild(particle)
-//            } else {
-//                print("No Particle Found")
-//            }
-//        }
-//    }
-    
-    func playBoomSound() {
-        let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Firework Sound.mp3", ofType: nil)!)
+    func playBoomSound(_ fileName: String) {
+        let url = URL(fileURLWithPath: Bundle.main.path(forResource: "\(fileName).mp3", ofType: nil)!)
         do {
             var boomSound: AVAudioPlayer? = try AVAudioPlayer(contentsOf: url)
             boomSound?.delegate = self
@@ -99,12 +146,12 @@ class GameScene: SKScene {
         let randomNumber = Int(arc4random_uniform(UInt32(booms.count)))
         if let particle = self.booms[randomNumber].copy() as? SKEmitterNode {
             particle.run(SKAction.sequence([SKAction.wait(forDuration: 1.25), SKAction.removeFromParent()]))
-                particle.position = point
-                self.addChild(particle)
-            } else {
-                print("No Particle Found")
-            }
-
+            particle.position = point
+            self.addChild(particle)
+        } else {
+            print("No Particle Found")
+        }
+        
     }
     
     func getParticle(_ touch: UITouch) -> SKEmitterNode? {
@@ -131,22 +178,23 @@ class GameScene: SKScene {
         for touch   in touches {
             let oldPoint = touch.preciseLocation(in: self.view)
             let newPoint = CGPoint(x: oldPoint.x, y: -oldPoint.y)
-        if let particleTrail = particleTrails[touch] {
-            
-            if let smthT = particleTrail.copy() as? SKEmitterNode {
-            smthT.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
-                smthT.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
-            self.addChild(smthT)
+            if let particleTrail = particleTrails[touch] {
+                
+                if let smthT = particleTrail.copy() as? SKEmitterNode {
+                    smthT.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
+                    smthT.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
+                    self.addChild(smthT)
+                }
+            } else {
+                let randomNumber = Int(arc4random_uniform(UInt32(boomTrails.count)))
+                if let particleTrail = self.boomTrails[randomNumber].copy() as? SKEmitterNode {
+                    particleTrails[touch] = particleTrail
+                    particleTrail.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
+                    particleTrail.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
+                    self.addChild(particleTrail)
+                }
+                
             }
-        } else {
-            let randomNumber = Int(arc4random_uniform(UInt32(boomTrails.count)))
-            if let particleTrail = self.boomTrails[randomNumber].copy() as? SKEmitterNode {
-                particleTrails[touch] = particleTrail
-                particleTrail.run(SKAction.sequence([SKAction.move(to: newPoint, duration: TimeInterval(1.0 * (UIScreen.main.bounds.height - oldPoint.y) / UIScreen.main.bounds.height)), SKAction.removeFromParent(), SKAction.run {completion(newPoint)}]))
-                particleTrail.position = CGPoint(x: oldPoint.x, y: -UIScreen.main.bounds.height)
-                self.addChild(particleTrail)
-            }
-        }
         }
         startTimer()
     }
