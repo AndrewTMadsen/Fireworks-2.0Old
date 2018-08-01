@@ -19,6 +19,8 @@ class GameScene: SKScene {
     var countdownTimer: Timer!
     var delayTime = 0.125
     var isTouchEligible = true
+    let instrumentTypes: [Instrument: Int] = [.piano: 8, .guitar: 6]
+    var currentInstrument = Instrument.piano
     
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
@@ -39,33 +41,15 @@ class GameScene: SKScene {
                 print(point.preciseLocation(in: view))
                 fireFirework(CGPoint(x: point.preciseLocation(in: view).x, y: -point.preciseLocation(in: view).y)) //If not music, pass in just point here.
                 var section = 0
-                var currentSize = UIScreen.main.bounds.height / 8
+                var currentSize = UIScreen.main.bounds.height / CGFloat(instrumentTypes[currentInstrument]!)
                 while(currentSize < point.preciseLocation(in: view).y) //If not music, pass in just -point.y here.
                 {
-                    currentSize += UIScreen.main.bounds.height / 8
+                    currentSize += UIScreen.main.bounds.height / CGFloat(instrumentTypes[currentInstrument]!)
                     section += 1 //Thanks swift ++ is so hard
                 }
-                switch(section)
-                {
-                case 0:
-                    playBoomSound("NotMid_C")
-                case 1:
-                    playBoomSound("Mid_B")
-                case 2:
-                    playBoomSound("Mid_A")
-                case 3:
-                    playBoomSound("Mid_G")
-                case 4:
-                    playBoomSound("Mid_F")
-                case 5:
-                    playBoomSound("Mid_E")
-                case 6:
-                    playBoomSound("Mid_D")
-                case 7:
-                    playBoomSound("Mid_C")
-                default:
-                    fatalError("This will never be called")
-                }
+                
+                //How the below line looks in any other respectable language: ((String) currentInstrument).substring(0, 1) + ((String) currentInstrument).substring(1)
+                playBoomSound("\(String("\(currentInstrument)".first!).uppercased())\(String("\(currentInstrument)".dropFirst().lowercased()))_\(section)")
                 // self.playBoomSound()
             }
         }
@@ -76,34 +60,14 @@ class GameScene: SKScene {
             for point in touches
             {
                 fireFirework(CGPoint(x: point.preciseLocation(in: view).x, y: -point.preciseLocation(in: view).y)) //If not music, pass in just point here.
-                var currentSize = UIScreen.main.bounds.height / 8
                 var section = 0
-                
-                while currentSize < point.preciseLocation(in: view).y {
-                    section += 1 // swift is ++ too Hard
-                    currentSize += UIScreen.main.bounds.height / 8
+                var currentSize = UIScreen.main.bounds.height / CGFloat(instrumentTypes[currentInstrument]!)
+                while(currentSize < point.preciseLocation(in: view).y) //If not music, pass in just -point.y here.
+                {
+                    currentSize += UIScreen.main.bounds.height / CGFloat(instrumentTypes[currentInstrument]!)
+                    section += 1 //Thanks swift ++ is so hard
                 }
-                switch (section) {
-                case 0:
-                    playBoomSound("NotMid_C")
-                case 1:
-                    playBoomSound("Mid_B")
-                case 2:
-                    playBoomSound("Mid_A")
-                case 3:
-                    playBoomSound("Mid_G")
-                case 4:
-                    playBoomSound("Mid_F")
-                case 5:
-                    playBoomSound("Mid_E")
-                case 6:
-                    playBoomSound("Mid_D")
-                case 7:
-                    playBoomSound("Mid_C")
-                default:
-                    fatalError("This will never be called")
-                }
-                
+                playBoomSound("\(String("\(currentInstrument)".first!).uppercased())\(String("\(currentInstrument)".dropFirst().lowercased()))_\(section)")
                 // self.playBoomSound()
             }
         }
@@ -215,6 +179,11 @@ extension GameScene: AVAudioPlayerDelegate {
         }
         boomPlayer.remove(at: index)
     }
+}
+
+enum Instrument
+{
+    case piano, guitar
 }
 
 

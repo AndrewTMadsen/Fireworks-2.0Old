@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9D094BB4210F5B710022816B /* Firework Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D094BB3210F5B710022816B /* Firework Sound.mp3 */; };
-		9D1481C92112057C00650980 /* Mid_G.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C12112057B00650980 /* Mid_G.mp3 */; };
-		9D1481CA2112057C00650980 /* Mid_F.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C22112057C00650980 /* Mid_F.mp3 */; };
-		9D1481CB2112057C00650980 /* Mid_A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C32112057C00650980 /* Mid_A.mp3 */; };
-		9D1481CC2112057C00650980 /* Mid_B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C42112057C00650980 /* Mid_B.mp3 */; };
-		9D1481CD2112057C00650980 /* Mid_D.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C52112057C00650980 /* Mid_D.mp3 */; };
-		9D1481CE2112057C00650980 /* NotMid_C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C62112057C00650980 /* NotMid_C.mp3 */; };
-		9D1481CF2112057C00650980 /* Mid_C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C72112057C00650980 /* Mid_C.mp3 */; };
-		9D1481D02112057C00650980 /* Mid_E.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C82112057C00650980 /* Mid_E.mp3 */; };
+		9D1481C92112057C00650980 /* Piano_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C12112057B00650980 /* Piano_3.mp3 */; };
+		9D1481CA2112057C00650980 /* Piano_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C22112057C00650980 /* Piano_4.mp3 */; };
+		9D1481CB2112057C00650980 /* Piano_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C32112057C00650980 /* Piano_2.mp3 */; };
+		9D1481CC2112057C00650980 /* Piano_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C42112057C00650980 /* Piano_1.mp3 */; };
+		9D1481CD2112057C00650980 /* Piano_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C52112057C00650980 /* Piano_6.mp3 */; };
+		9D1481CE2112057C00650980 /* Piano_0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C62112057C00650980 /* Piano_0.mp3 */; };
+		9D1481CF2112057C00650980 /* Piano_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C72112057C00650980 /* Piano_7.mp3 */; };
+		9D1481D02112057C00650980 /* Piano_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D1481C82112057C00650980 /* Piano_5.mp3 */; };
 		9D6C151D20F6632A0050BD60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C151C20F6632A0050BD60 /* AppDelegate.swift */; };
 		9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C151E20F6632A0050BD60 /* GameScene.sks */; };
 		9D6C152120F6632A0050BD60 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C152020F6632A0050BD60 /* Actions.sks */; };
@@ -71,14 +71,14 @@
 
 /* Begin PBXFileReference section */
 		9D094BB3210F5B710022816B /* Firework Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Firework Sound.mp3"; sourceTree = "<group>"; };
-		9D1481C12112057B00650980 /* Mid_G.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_G.mp3; sourceTree = "<group>"; };
-		9D1481C22112057C00650980 /* Mid_F.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_F.mp3; sourceTree = "<group>"; };
-		9D1481C32112057C00650980 /* Mid_A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_A.mp3; sourceTree = "<group>"; };
-		9D1481C42112057C00650980 /* Mid_B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_B.mp3; sourceTree = "<group>"; };
-		9D1481C52112057C00650980 /* Mid_D.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_D.mp3; sourceTree = "<group>"; };
-		9D1481C62112057C00650980 /* NotMid_C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NotMid_C.mp3; sourceTree = "<group>"; };
-		9D1481C72112057C00650980 /* Mid_C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_C.mp3; sourceTree = "<group>"; };
-		9D1481C82112057C00650980 /* Mid_E.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mid_E.mp3; sourceTree = "<group>"; };
+		9D1481C12112057B00650980 /* Piano_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_3.mp3; sourceTree = "<group>"; };
+		9D1481C22112057C00650980 /* Piano_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_4.mp3; sourceTree = "<group>"; };
+		9D1481C32112057C00650980 /* Piano_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_2.mp3; sourceTree = "<group>"; };
+		9D1481C42112057C00650980 /* Piano_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_1.mp3; sourceTree = "<group>"; };
+		9D1481C52112057C00650980 /* Piano_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_6.mp3; sourceTree = "<group>"; };
+		9D1481C62112057C00650980 /* Piano_0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_0.mp3; sourceTree = "<group>"; };
+		9D1481C72112057C00650980 /* Piano_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_7.mp3; sourceTree = "<group>"; };
+		9D1481C82112057C00650980 /* Piano_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_5.mp3; sourceTree = "<group>"; };
 		9D6C151920F6632A0050BD60 /* Fireworks 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fireworks 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6C151C20F6632A0050BD60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6C151E20F6632A0050BD60 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -149,17 +149,25 @@
 		9D1481C02112047300650980 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				9D1481D12112132B00650980 /* Piano */,
 				9D094BB3210F5B710022816B /* Firework Sound.mp3 */,
-				9D1481C32112057C00650980 /* Mid_A.mp3 */,
-				9D1481C42112057C00650980 /* Mid_B.mp3 */,
-				9D1481C72112057C00650980 /* Mid_C.mp3 */,
-				9D1481C52112057C00650980 /* Mid_D.mp3 */,
-				9D1481C82112057C00650980 /* Mid_E.mp3 */,
-				9D1481C22112057C00650980 /* Mid_F.mp3 */,
-				9D1481C12112057B00650980 /* Mid_G.mp3 */,
-				9D1481C62112057C00650980 /* NotMid_C.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		9D1481D12112132B00650980 /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				9D1481C32112057C00650980 /* Piano_2.mp3 */,
+				9D1481C42112057C00650980 /* Piano_1.mp3 */,
+				9D1481C72112057C00650980 /* Piano_7.mp3 */,
+				9D1481C52112057C00650980 /* Piano_6.mp3 */,
+				9D1481C82112057C00650980 /* Piano_5.mp3 */,
+				9D1481C22112057C00650980 /* Piano_4.mp3 */,
+				9D1481C12112057B00650980 /* Piano_3.mp3 */,
+				9D1481C62112057C00650980 /* Piano_0.mp3 */,
+			);
+			path = Piano;
 			sourceTree = "<group>";
 		};
 		9D6C151020F6632A0050BD60 = {
@@ -367,29 +375,29 @@
 				9D8724A5210A1A5300C8E7AE /* Trail10.sks in Resources */,
 				9D6C155120F663D70050BD60 /* FireworkExplosion.sks in Resources */,
 				9D8724852108B73400C8E7AE /* Assets.xcassets in Resources */,
-				9D1481CA2112057C00650980 /* Mid_F.mp3 in Resources */,
+				9D1481CA2112057C00650980 /* Piano_4.mp3 in Resources */,
 				9D87249F210A163000C8E7AE /* Trail4.sks in Resources */,
 				9D6C152820F6632A0050BD60 /* Main.storyboard in Resources */,
 				9D8724A3210A197B00C8E7AE /* Trail9.sks in Resources */,
 				9D872487210A084400C8E7AE /* Trail0.sks in Resources */,
-				9D1481D02112057C00650980 /* Mid_E.mp3 in Resources */,
+				9D1481D02112057C00650980 /* Piano_5.mp3 in Resources */,
 				9D8724A1210A185B00C8E7AE /* Trail5.sks in Resources */,
-				9D1481CB2112057C00650980 /* Mid_A.mp3 in Resources */,
+				9D1481CB2112057C00650980 /* Piano_2.mp3 in Resources */,
 				9D881A2C20FCE9000011D2C0 /* FireworkExplosion3.sks in Resources */,
 				9D094BB4210F5B710022816B /* Firework Sound.mp3 in Resources */,
-				9D1481CE2112057C00650980 /* NotMid_C.mp3 in Resources */,
+				9D1481CE2112057C00650980 /* Piano_0.mp3 in Resources */,
 				9DB4066321004F420068B832 /* FireworkKA.sks in Resources */,
 				9DB40669210060600068B832 /* FireworkSM.sks in Resources */,
-				9D1481C92112057C00650980 /* Mid_G.mp3 in Resources */,
+				9D1481C92112057C00650980 /* Piano_3.mp3 in Resources */,
 				9DB4065C21004BA80068B832 /* FireWorkAN.sks in Resources */,
-				9D1481CF2112057C00650980 /* Mid_C.mp3 in Resources */,
+				9D1481CF2112057C00650980 /* Piano_7.mp3 in Resources */,
 				9D8724A7210A1B0400C8E7AE /* Trail11.sks in Resources */,
 				9D6C151F20F6632A0050BD60 /* GameScene.sks in Resources */,
 				9D6C152A20F6632B0050BD60 /* Assets.xcassets in Resources */,
 				9D872489210A08FB00C8E7AE /* Trail1.sks in Resources */,
 				9D8724842108B73400C8E7AE /* testTrail.sks in Resources */,
-				9D1481CD2112057C00650980 /* Mid_D.mp3 in Resources */,
-				9D1481CC2112057C00650980 /* Mid_B.mp3 in Resources */,
+				9D1481CD2112057C00650980 /* Piano_6.mp3 in Resources */,
+				9D1481CC2112057C00650980 /* Piano_1.mp3 in Resources */,
 				9DB40665210050440068B832 /* FireworkCA.sks in Resources */,
 				9D87248B210A0A5300C8E7AE /* Trail2.sks in Resources */,
 				9DB4066B210076C70068B832 /* FireworkBM.sks in Resources */,
