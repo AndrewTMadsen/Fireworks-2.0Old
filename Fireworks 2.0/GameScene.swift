@@ -24,7 +24,7 @@ class GameScene: SKScene {
     
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
-       // isTouchEligible = false
+        isTouchEligible = false
     }
     
     @objc func endTimer() {
@@ -35,10 +35,9 @@ class GameScene: SKScene {
     //MARK: Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isTouchEligible {
+            startTimer()
             //startTail(at: touches) { point in //NON MUSIC MODE
-            for point in touches
-            {
-                print(point.preciseLocation(in: view))
+            for point in touches {
                 fireFirework(CGPoint(x: point.preciseLocation(in: view).x, y: -point.preciseLocation(in: view).y)) //If not music, pass in just point here.
                 var section = 0
                 var currentSize = UIScreen.main.bounds.height / CGFloat(instrumentTypes[currentInstrument]!)
@@ -56,6 +55,7 @@ class GameScene: SKScene {
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isTouchEligible {
+            startTimer()
             //startTail(at: touches) { point in //NON MUSIC MODE
             for point in touches
             {
@@ -75,10 +75,12 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         removeTouches(touches)
+        endTimer()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         removeTouches(touches)
+        endTimer()
     }
     
     func removeTouches(_ touches: Set<UITouch>) {
@@ -100,21 +102,20 @@ class GameScene: SKScene {
             boomSound!.play()
             boomSound = nil
         } catch {
-            print(error)
             print(error.localizedDescription)
-            print("Could Not Load File")
         }
     }
+    weak var recDelegate: RecorderDelegate?
     
     func fireFirework(_ point: CGPoint) {
+        recDelegate?.fireworkHasFired(point: point)
         let randomNumber = Int(arc4random_uniform(UInt32(booms.count)))
         if let particle = self.booms[randomNumber].copy() as? SKEmitterNode {
             particle.run(SKAction.sequence([SKAction.wait(forDuration: 1.25), SKAction.removeFromParent()]))
             particle.position = point
             self.addChild(particle)
-        } else {
-            print("No Particle Found")
         }
+        //send data to gameviewController
         
     }
     
@@ -186,4 +187,8 @@ enum Instrument
     case piano, guitar
 }
 
-
+protocol RecorderDelegate: class  {
+    func fireworkHasFired(point: CGPoint)
+    
+    
+}
