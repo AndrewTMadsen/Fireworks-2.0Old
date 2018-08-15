@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SettingsLauncher: NSObject {
+class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var blackView = UIView()
     
@@ -19,6 +19,7 @@ class SettingsLauncher: NSObject {
         cv.backgroundColor = UIColor.white
         return cv
     }()
+    let cellId = "cellId"
     func showSettings() {
         if let window = UIApplication.shared.keyWindow {
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -54,8 +55,21 @@ class SettingsLauncher: NSObject {
             
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellId, for: indexPath)
+        return cell
+    }
     override init() {
         super.init()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(UICollectionViewCell.self  , forCellWithReuseIdentifier: cellId)
     }
 }
 
