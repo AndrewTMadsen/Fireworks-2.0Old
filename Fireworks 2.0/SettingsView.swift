@@ -9,67 +9,77 @@
 import Foundation
 import UIKit
 
-class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SettingsLauncher: UIViewController {
     
-    var blackView = UIView()
+    var isRecording: Bool = false
+    var hasTrails: Bool = false
+    let instruments: [InstrumentType] = [.piano, .guitar]
+    @IBOutlet weak var instrumentsStackView: UIStackView!
     
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
-        return cv
-    }()
-    let cellId = "cellId"
-    func showSettings() {
-        if let window = UIApplication.shared.keyWindow {
-            blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
-            
-            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
-            
-            window.addSubview(blackView)
-            window.addSubview(collectionView)
-            
-            let height: CGFloat = 200
-            let y = window.frame.height - height
-            collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
-            blackView.frame = window.frame
-            blackView.alpha = 0
-            
-            
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                
-                self.blackView.alpha = 1
-                self.collectionView.frame = CGRect(x:0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-                
-            }, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        instrumentsStackView.translatesAutoresizingMaskIntoConstraints = false
+        for instrument in instruments {
+            let instrumentButton = UIButton()
+            instrumentButton.setTitle("\(instrument)".titlecased(), for: .normal)
+            instrumentButton.setTitleColor(UIColor(red: 0, green: 122.0 / 255, blue: 1, alpha: 1), for: .normal)
+            instrumentButton.setTitleColor(UIColor(red: 207.0 / 255, green: 230.0 / 255, blue: 1, alpha: 1), for: .highlighted)
+            instrumentButton.addTarget(self, action: #selector(instrumentButtonTapped), for: .touchUpInside)
+            instrumentsStackView.addArrangedSubview(instrumentButton)
         }
+        let trailsButton = UIButton()
+        trailsButton.setTitle("Trails", for: .normal)
+        trailsButton.setTitleColor(UIColor(red: 0, green: 122.0 / 255, blue: 1, alpha: 1), for: .normal)
+        trailsButton.setTitleColor(UIColor(red: 207.0 / 255, green: 230.0 / 255, blue: 1, alpha: 1), for: .highlighted)
+        trailsButton.addTarget(self, action: #selector(instrumentButtonTapped), for: .touchUpInside)
+        //Thank you for providing me with the default color values in your enum Swift, I really appreciate it!
+        instrumentsStackView.addArrangedSubview(trailsButton)
     }
     
-    @objc func handleDismiss() {
-        UIView.animate(withDuration: 0.5) {
-            self.blackView.alpha = 0
-            
-            if let window = UIApplication.shared.keyWindow {
-                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+    @objc func instrumentButtonTapped(_ sender: UIButton)
+    {
+        if sender.title(for: .normal) == "Trails" {
+            //Set things to trails
+        }
+        else {
+            for instrument in instruments {
+                if sender.title(for: .normal)!.lowercased() == "\(instrument)" {
+                    //Set things to that instrument
+                    break
+                }
             }
-            
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+    @IBAction func trailsSwitched(_ sender: UISwitch) {
+        hasTrails = sender.isOn
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellId, for: indexPath)
-        return cell
+    
+    @IBAction func toggleRecording(_ sender: UIButton) {
+        isRecording = !isRecording
+        sender.setTitle(isRecording ? "End Recording" : "Start Recording", for: .normal)
     }
-    override init() {
-        super.init()
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        collectionView.register(UICollectionViewCell.self  , forCellWithReuseIdentifier: cellId)
+    
+    @IBAction func viewRecordings(_ sender: UIButton) {
+        performSegue(withIdentifier: "viewWithListOfRecordings", sender: nil)
+    }
+}
+
+enum InstrumentType
+{
+    case piano, guitar
+}
+
+extension String
+{
+    func titlecased() -> String
+    {
+        var newString = ""
+        for word in self.split(separator: " ")
+        {
+            newString += "\(String(word.first!).uppercased())\(word.dropFirst().lowercased())"
+        }
+        return newString
     }
 }
 

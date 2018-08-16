@@ -75,7 +75,7 @@ class GameViewController: UIViewController, RPPreviewViewControllerDelegate, Rec
     let settingsLauncher = SettingsLauncher()
     
     func handleMore() {
-        settingsLauncher.showSettings()
+        settingsLauncher.present(settingsLauncher, animated: true, completion: nil)
     }
     
     @IBAction func change(_ sender: UIButton) {
