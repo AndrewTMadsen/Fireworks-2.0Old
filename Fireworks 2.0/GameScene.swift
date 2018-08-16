@@ -20,7 +20,7 @@ class GameScene: SKScene {
     var delayTime = 0.125
     var isTouchEligible = true
     let instrumentTypes: [Instrument: Int] = [.piano: 8, .guitar: 6]
-    var currentInstrument = Instrument.piano
+    var currentInstrument = Instrument.guitar
     
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
